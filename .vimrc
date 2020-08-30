@@ -1,7 +1,7 @@
 set nu
 syntax on
 
-set nocompatible              " be iMproved, required
+set nocompatible              " be improved, required
 filetype off                  " required
 
 set hlsearch
