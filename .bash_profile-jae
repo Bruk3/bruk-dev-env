@@ -1,0 +1,23 @@
+# Jae's ~/.bash_profile
+
+# bash completion for mac through homebrew
+case "$OSTYPE" in
+    *darwin*)
+        if [ -f $(brew --prefix)/etc/bash_completion ]; then
+            . $(brew --prefix)/etc/bash_completion
+        fi
+        ;;
+esac
+
+# include .bashrc if it exists
+if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+	PATH="$PATH:$HOME/bin"
+fi
+
+# put /usr/local/bin in the beginning for homebrew
+export PATH=/usr/local/bin:$PATH
